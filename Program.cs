@@ -5,6 +5,7 @@ using Microsoft.Xna.Framework.Input;
 
 using myGame.ecs;
 using myGame.systems;
+using myGame.world;
 
 namespace myGame
 {
@@ -23,8 +24,10 @@ namespace myGame
     {
         GraphicsDeviceManager graphics;
         GraphicsSystem gfxSystem;
+
         Entity player;
         Guid playerID;
+        Map map;
         public Game()
         {
             this.graphics = new GraphicsDeviceManager(this);
@@ -44,6 +47,7 @@ namespace myGame
             Globals._contentManager = this.Content;
             this.gfxSystem = new GraphicsSystem(this.GraphicsDevice);
 
+            this.map = new Map(30, 30);
             player = new Entity(new CompPosition(10, 10), new CompGraphics('@'));
             this.playerID = player.Id;
 

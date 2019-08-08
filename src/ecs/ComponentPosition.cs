@@ -2,7 +2,7 @@ using Microsoft.Xna.Framework;
 
 namespace myGame.ecs
 {
-    public class CompPosition: Component
+    public class CompPosition : Component
     {
         private int _map_x;
         private int _map_y;
@@ -20,10 +20,11 @@ namespace myGame.ecs
         public Vector2 MapPos
         {
             get => new Vector2(this._map_x, this._map_y);
-            set {
+            set
+            {
                 this._map_x = (int)value.X;
                 this._map_y = (int)value.Y;
-                }
+            }
         }
 
         public int Map_x

@@ -20,7 +20,7 @@ namespace myGame.ecs
             get => _compPos;
         }
 
-        public CompManager() 
+        public CompManager()
         {
             this._compGfx = new Dictionary<Guid, CompGraphics>();
             this._compPos = new Dictionary<Guid, CompPosition>();

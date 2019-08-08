@@ -1,10 +1,9 @@
 
 namespace myGame.ecs
 {
-    public class CompGraphics: Component
+    public class CompGraphics : Component
     {
         private char _c;
-        //private Color _color;
 
         public string Symbol
         {

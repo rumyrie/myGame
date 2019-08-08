@@ -21,11 +21,5 @@ namespace myGame.ecs
                 Globals._compManager.RegisterComponent(comp);
             }
         }
-
-        /*         public void move(int dx, int dy)
-                {
-                    this._map_x += dx;
-                    this._map_y += dy;
-                } */
     }
 }

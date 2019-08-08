@@ -8,7 +8,7 @@ namespace myGame.systems
     {
         private GraphicsDevice _gfxDevice;
         private SpriteFont _mapFont;
-        
+
         public GraphicsSystem(GraphicsDevice gfxDevice)
         {
             this._gfxDevice = gfxDevice;
@@ -25,9 +25,14 @@ namespace myGame.systems
 
             Globals.sprite_batch.Begin();
 
-            foreach(var comp in drawList)
+            foreach (var comp in drawList)
             {
-                Globals.sprite_batch.DrawString(this._mapFont, comp.Value.Symbol, Globals._compManager.GetScreenPos(comp.Value.Id), Color.Red);
+                Globals.sprite_batch.DrawString(
+                    this._mapFont,
+                    comp.Value.Symbol,
+                    Globals._compManager.GetScreenPos(comp.Value.Id),
+                    Color.Red
+                );
             }
             Globals.sprite_batch.End();
         }
