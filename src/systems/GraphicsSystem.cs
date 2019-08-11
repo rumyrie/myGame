@@ -18,7 +18,17 @@ namespace myGame.systems
         {
             this._mapFont = Globals._contentManager.Load<SpriteFont>("map_chars");
         }
-        public void Draw()
+
+        public void DrawEntity(CompGraphics comp)
+        {
+            Globals.sprite_batch.DrawString(
+                    this._mapFont,
+                    comp.Symbol,
+                    Globals._compManager.GetScreenPos(comp.Id),
+                    comp.Color
+                );
+        }
+        public void DrawAll()
         {
             this._gfxDevice.Clear(Color.Black);
             var drawList = Globals._compManager.GraphicComponentList;
@@ -27,12 +37,7 @@ namespace myGame.systems
 
             foreach (var comp in drawList)
             {
-                Globals.sprite_batch.DrawString(
-                    this._mapFont,
-                    comp.Value.Symbol,
-                    Globals._compManager.GetScreenPos(comp.Value.Id),
-                    Color.Red
-                );
+                DrawEntity(comp.Value);
             }
             Globals.sprite_batch.End();
         }

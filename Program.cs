@@ -48,7 +48,7 @@ namespace myGame
             this.gfxSystem = new GraphicsSystem(this.GraphicsDevice);
 
             this.map = new Map(30, 30);
-            player = new Entity(new CompPosition(10, 10), new CompGraphics('@'));
+            player = new Entity(new CompPosition(10, 10), new CompGraphics('@', Color.Red));
             this.playerID = player.Id;
 
             base.Initialize();
@@ -79,7 +79,7 @@ namespace myGame
 
         protected override void Draw(GameTime gameTime)
         {
-            this.gfxSystem.Draw();
+            this.gfxSystem.DrawAll();
             base.Draw(gameTime);
         }
     }

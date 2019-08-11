@@ -1,18 +1,27 @@
 
+using Microsoft.Xna.Framework;
+
 namespace myGame.ecs
 {
     public class CompGraphics : Component
     {
         private char _c;
+        private Color _color;
 
         public string Symbol
         {
             get => this._c.ToString();
         }
 
-        public CompGraphics(char c)
+        public Color Color
+        {
+            get => this._color;
+        }
+
+        public CompGraphics(char c, Color color)
         {
             this._c = c;
+            this._color = color;
         }
     }
 }

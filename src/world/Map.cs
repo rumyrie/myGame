@@ -1,5 +1,6 @@
 
 using myGame.ecs;
+using Microsoft.Xna.Framework;
 
 namespace myGame.world
 {
@@ -22,11 +23,11 @@ namespace myGame.world
                     CompGraphics tile;
                     if ((i == 0) || (i == (this._width - 1)) || (j == 0) || (j == (this._height - 1)))
                     {
-                        tile = new CompGraphics('#');
+                        tile = new CompGraphics('#', Color.Brown);
                     }
                     else
                     {
-                        tile = new CompGraphics('.');
+                        tile = new CompGraphics('.', Color.White);
                     }
 
                     this._tiles[i, j] = new Entity(tile, new CompPosition(i, j));
