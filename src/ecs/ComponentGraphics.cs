@@ -11,6 +11,7 @@ namespace myGame.ecs
         public string Symbol
         {
             get => this._c.ToString();
+            set => this._c = value[0];
         }
 
         public Color Color

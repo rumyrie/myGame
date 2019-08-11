@@ -1,7 +1,6 @@
 using System;
 using System.Collections.Generic;
 using Microsoft.Xna.Framework;
-using System.Linq;
 
 namespace myGame.ecs
 {
@@ -34,8 +33,11 @@ namespace myGame.ecs
 
         public void MoveEntity(Guid id, int dx, int dy)
         {
-            this._compPos[id].Map_x += dx;
-            this._compPos[id].Map_y += dy;
+            if (!Globals._map.IsBlocked(this._compPos[id].Map_x + dx, _compPos[id].Map_y + dy))
+            {
+                this._compPos[id].Map_x += dx;
+                this._compPos[id].Map_y += dy;
+            }
         }
 
         public void RegisterComponent(Component component)

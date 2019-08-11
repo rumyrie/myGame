@@ -27,7 +27,6 @@ namespace myGame
 
         Entity player;
         Guid playerID;
-        Map map;
         public Game()
         {
             this.graphics = new GraphicsDeviceManager(this);
@@ -47,7 +46,7 @@ namespace myGame
             Globals._contentManager = this.Content;
             this.gfxSystem = new GraphicsSystem(this.GraphicsDevice);
 
-            this.map = new Map(30, 30);
+            Globals._map = new Map(30, 30);
             player = new Entity(new CompPosition(10, 10), new CompGraphics('@', Color.Red));
             this.playerID = player.Id;
 
@@ -56,7 +55,7 @@ namespace myGame
 
         protected override void LoadContent()
         {
-            Globals.sprite_batch = new SpriteBatch(GraphicsDevice);
+            Globals._spriteBatch = new SpriteBatch(GraphicsDevice);
             this.gfxSystem.LoadContent();
         }
 

@@ -21,7 +21,7 @@ namespace myGame.systems
 
         public void DrawEntity(CompGraphics comp)
         {
-            Globals.sprite_batch.DrawString(
+            Globals._spriteBatch.DrawString(
                     this._mapFont,
                     comp.Symbol,
                     Globals._compManager.GetScreenPos(comp.Id),
@@ -33,13 +33,38 @@ namespace myGame.systems
             this._gfxDevice.Clear(Color.Black);
             var drawList = Globals._compManager.GraphicComponentList;
 
-            Globals.sprite_batch.Begin();
+            Globals._spriteBatch.Begin();
 
             foreach (var comp in drawList)
             {
                 DrawEntity(comp.Value);
             }
-            Globals.sprite_batch.End();
+            Globals._spriteBatch.End();
         }
+
+        #region Temporary solution for cleaning entitities from screen
+        public void ClearEntity(CompGraphics comp)
+        {
+            comp.Symbol = " ";
+            Globals._spriteBatch.DrawString(
+                this._mapFont,
+                comp.Symbol,
+                Globals._compManager.GetScreenPos(comp.Id),
+                comp.Color
+            );
+        }
+
+        public void ClearAll()
+        {
+            var drawList = Globals._compManager.GraphicComponentList;
+
+            Globals._spriteBatch.Begin();
+            foreach (var comp in drawList)
+            {
+                ClearEntity(comp.Value);
+            }
+            Globals._spriteBatch.End();
+        }
+        #endregion
     }
 }
