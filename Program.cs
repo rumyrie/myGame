@@ -46,7 +46,7 @@ namespace myGame
             Globals._contentManager = this.Content;
             this.gfxSystem = new GraphicsSystem(this.GraphicsDevice);
 
-            Globals._map = new Map(30, 30);
+            Globals._map = new Map(80, 80);
             player = new Entity(new CompPosition(10, 10), new CompGraphics('@', Color.Red));
             this.playerID = player.Id;
 

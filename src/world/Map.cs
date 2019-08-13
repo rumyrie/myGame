@@ -20,30 +20,16 @@ namespace myGame.world
             {
                 for (var j = 0; j < this._height; j++)
                 {
-                    CompGraphics tile;
-                    var block = false;
-                    var blockSight = false;
-
-                    if ((i == 0) || (i == (this._width - 1)) || (j == 0) || (j == (this._height - 1)))
-                    {
-                        //wall
-                        tile = new CompGraphics('#', Color.Brown);
-                        block = true;
-                        blockSight = true;
-                    }
-                    else
-                    {
-                        tile = new CompGraphics('.', Color.White);
-                    }
-
-                    this._tiles[i, j] = new Tile(block, blockSight, tile, new CompPosition(i, j));
+                    this._tiles[i, j] = new Tile(
+                        true, true, new CompGraphics('#', Color.Brown), new CompPosition(i, j)
+                    );
                 }
             }
         }
 
         public bool IsBlocked(int x, int y)
         {
-            return this._tiles[x,y].Block;
+            return this._tiles[x, y].Block;
         }
     }
 }

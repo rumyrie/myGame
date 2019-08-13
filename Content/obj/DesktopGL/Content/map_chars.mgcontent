@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <SourceFile>c:/Users/Meer/source/myGame/Content/map_chars.spritefont</SourceFile>
-  <SourceTime>2019-08-05T21:19:30.9436131+05:00</SourceTime>
+  <SourceTime>2019-08-13T22:04:42.7532565+05:00</SourceTime>
   <DestFile>c:/Users/Meer/source/myGame/Content/bin/DesktopGL/Content/map_chars.xnb</DestFile>
-  <DestTime>2019-08-05T21:19:41.4922164+05:00</DestTime>
+  <DestTime>2019-08-13T22:05:20.7104275+05:00</DestTime>
   <Importer>FontDescriptionImporter</Importer>
   <ImporterTime>2018-01-13T19:18:24+05:00</ImporterTime>
   <Processor>LocalizedFontProcessor</Processor>
